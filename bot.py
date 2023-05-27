@@ -38,7 +38,7 @@ async def rgb(ctx, color: str):
         await ctx.author.add_roles(selected_role)
         print(f"Added role to {ctx.author.id}")
 
-    await ctx.respond(f"Successfully set your role color to {color}!")a
+    await ctx.respond(f"Successfully set your role color to {color}!")
 
 def hexToRgb(hex: str):
     hex = hex.lstrip("#")
