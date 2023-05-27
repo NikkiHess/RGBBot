@@ -17,6 +17,13 @@ async def rgb(ctx, color: str):
 
     # if we have a proper color code
     if is_hex:
+        color = color.lstrip("#").lower()
+        # No invis on AMOLED, light, or dark mode (doesn't account for themes)
+        if(color == "000000" or color == "ffffff" or color == "35393e"):
+            await ctx.respond("You have chosen a restricted color! Please choose a different one.")
+            return
+            
+
         print("is_hex")
         # create role with name == author id
         if selected_role is None:
